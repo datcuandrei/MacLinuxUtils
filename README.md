@@ -1,1 +1,58 @@
 # MacLinuxUtilities
+On macOS,there are tools for controlling the fan speeds,switching turbo mode on or off,etc.Sadly,Mac users on Linux have no alternatives for such tools.
+MacLinuxUtilities's aim is to bring the functionality and ease of use of those tools on Linux distros,all in one package.
+
+## LICENSE
+This project is licensed under the GNU GPL v3 license. View LICENSE.md to learn more.
+
+## Requirements:
+- Latest Java version.
+
+## Donwload/How to use : 
+- Installing the latest version of Java is as simple as opening the terminal and typing :
+
+##### Debian,Ubuntu-based :
+```bash
+$ sudo apt-get update
+$ sudo apt install default-jdk
+```
+
+##### Arch-based :
+```bash
+$ sudo pacman -S jdk-openjdk
+```
+
+##### Fedora, Oracle Linux, Red Hat Enterprise Linux, etc. : 
+```bash
+$ sudo dnf search openjdk
+```
+Choose the desired JDK and then install it :
+
+```bash
+$ sudo dnf install java-11-openjdk.x86_64
+```
+
+- After installing Java,download/clone the repo.
+- Extract it where you want the application to be installed.
+- To start the application,open terminal,``cd`` into the directory where you have extracted the application,and then run :
+```bash
+$ sh maclinuxutils.sh
+```
+*As a little side note,there is a dark mode too for the app.To activate it,you have to launch the app this way :*
+```bash
+$ sh maclinuxutils.sh d
+```
+
+## Permission denied : 
+This error occures when the user does not have enough privileges to access the program.
+In this case,we need to get ownership of the app by typing :
+```bash
+$ chmod +x maclinuxutils.sh
+```
+After that you can run the app using the commands provided above.
+
+## Issues : 
+If you find issues while running the app,please report them in the [issues](https://github.com/datcuandrei/MacLinuxUtilities/issues) section.
+
+## Attribution : 
+MacLinuxUtilities's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/).
