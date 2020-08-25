@@ -34,7 +34,7 @@ $ sudo dnf install java-11-openjdk.x86_64
 
 - After installing Java,download/clone the repo.
 - Extract it where you want the application to be installed.
-- To start the application,open terminal,``cd`` into the directory where you have extracted the application,and then run :
+- To start the application,open terminal,``cd path/to/extracted/repo/app``,and then run :
 ```bash
 $ sh maclinuxutils.sh
 ```
