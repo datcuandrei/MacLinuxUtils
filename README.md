@@ -8,7 +8,7 @@ This project is licensed under the GNU GPL v3 license. View LICENSE.md to learn 
 ## Requirements:
 - Latest Java version.
 
-## Donwload/How to use : 
+## Download/How to use : 
 - Installing the latest version of Java is as simple as opening the terminal and typing :
 
 ##### Debian,Ubuntu-based :
@@ -38,7 +38,7 @@ $ sudo dnf install java-11-openjdk.x86_64
 ```bash
 $ sh maclinuxutils.sh
 ```
-*As a little side note,there is a dark mode too for the app.To activate it,you have to launch the app this way :*
+It can also run under dark mode :
 ```bash
 $ sh maclinuxutils.sh d
 ```
@@ -50,6 +50,10 @@ In this case,we need to get ownership of the app by typing :
 $ chmod +x maclinuxutils.sh
 ```
 After that you can run the app using the commands provided above.
+
+## Why is it asking for my password ?
+Just like macOS alternatives,the application requires your password to execute operations.
+After typing your password in the terminal,the application will run under `super-user` mode(also known as `root`).The super-user mode allows it to modify the system files needed in order to do what it does.For more information of what it modifies,you can check the source code. 
 
 ## Issues : 
 If you find issues while running the app,please report them in the [issues](https://github.com/datcuandrei/MacLinuxUtilities/issues) section.
