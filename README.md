@@ -1,6 +1,6 @@
-# MacLinuxUtilities
-On macOS,there are tools for controlling the fan speeds,switching turbo mode on or off,etc.Sadly,Mac users on Linux have no alternatives for such tools.
-MacLinuxUtilities's aim is to bring the functionality and ease of use of those tools on Linux distros,all in one package.
+# MacLinuxUtils
+On macOS,there are tools for controlling the fan speeds,switching turbo boost on or off,etc.Sadly,Mac users on Linux have no alternatives for such tools.
+MacLinuxUtils's aim is to bring the functionality and ease of use of those tools on Linux distros,all in one package.
 
 ## LICENSE
 This project is licensed under the GNU GPL v3 license. View LICENSE.md to learn more.
@@ -56,7 +56,7 @@ Just like macOS alternatives,the application requires your password to execute o
 After typing your password in the terminal,the application will run under `super-user` mode(also known as `root`).The super-user mode allows it to modify the system files needed in order to do what it does.For more information of what it modifies,you can check the source code. 
 
 ## Issues : 
-If you find issues while running the app,please report them in the [issues](https://github.com/datcuandrei/MacLinuxUtilities/issues) section.
+If you find issues while running the app,please report them in the [issues](https://github.com/datcuandrei/MacLinuxUtils/issues) section.
 
 ## Attribution : 
-MacLinuxUtilities's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/).
+MacLinuxUtils's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/).
