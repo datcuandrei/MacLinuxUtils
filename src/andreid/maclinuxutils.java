@@ -32,26 +32,6 @@ public class maclinuxutils {
 
     public maclinuxutils() {
 
-        // Checking if the computer is a Mac.
-
-        boolean checkIfMac = new File("/sys/devices/platform/applesmc.768").exists();
-
-        if (checkIfMac == false){
-            JFrame noMac = new JFrame("Oops!");
-            noMac.setVisible(true);
-            noMac.setSize(210,120);
-            noMac.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            noMac.setLocationRelativeTo(null);
-            noMac.setLayout(new FlowLayout(FlowLayout.CENTER));
-            JLabel message = new JLabel("This program is for Intel-based Apple Macs only.");
-            JButton exit = new JButton("Exit");
-
-            exit.addActionListener(actionEvent -> System.exit(0));
-
-            noMac.add(message);
-            noMac.add(exit);
-        }
-
         // Fan Control (a lot of checks but it works)
 
         button1.addActionListener(actionEvent -> {
@@ -559,11 +539,33 @@ public class maclinuxutils {
 
     public static void main(String args[]) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel( new FlatLightLaf() ); // for dark mode = FlatDarculaLaf ; for light mode = FlatLightLaf.
-        JFrame frame = new JFrame("MacLinuxUtils");
-        frame.setContentPane(new maclinuxutils().panel1);
-        frame.setVisible(true);
-        frame.setSize(600,300);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
+
+        // Checking if the computer is a Mac.
+
+        boolean checkIfMac = new File("/sys/devices/platform/applesmc.768").exists();
+
+        if (checkIfMac == false){
+            JFrame noMac = new JFrame("Oops!");
+            noMac.setVisible(true);
+            noMac.setSize(210,120);
+            noMac.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            noMac.setLocationRelativeTo(null);
+            noMac.setLayout(new FlowLayout(FlowLayout.CENTER));
+            JLabel message = new JLabel("This program is for Intel-based Apple Macs only.");
+            JButton exit = new JButton("Exit");
+
+            exit.addActionListener(actionEvent -> System.exit(0));
+
+            noMac.add(message);
+            noMac.add(exit);
+        }
+        else {
+            JFrame frame = new JFrame("MacLinuxUtils");
+            frame.setContentPane(new maclinuxutils().panel1);
+            frame.setVisible(true);
+            frame.setSize(600, 300);
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            frame.setLocationRelativeTo(null);
+        }
     }
 }
