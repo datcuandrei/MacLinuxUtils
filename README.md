@@ -32,7 +32,7 @@ Choose the desired JDK and then install it :
 $ sudo dnf install java-11-openjdk.x86_64
 ```
 
-- After installing Java,download/clone the repo.
+- After installing Java,download the latest version available in [releases](https://github.com/datcuandrei/MacLinuxUtils/releases).
 - Extract it where you want the application to be installed.
 - To start the application,open terminal,``cd path/to/extracted/repo/app``,and then run :
 ```bash
@@ -59,4 +59,5 @@ After typing your password in the terminal,the application will run under `super
 If you find issues while running the app,please report them in the [issues](https://github.com/datcuandrei/MacLinuxUtils/issues) section.
 
 ## Attribution : 
-MacLinuxUtils's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/).
+- MacLinuxUtils's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/) library.
+- Special thanks to the macOS on Unsupported Macs community.
