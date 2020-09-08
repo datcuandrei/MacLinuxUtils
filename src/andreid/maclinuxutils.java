@@ -8,7 +8,7 @@
 		This Java class is the main and only class for the program.Everything is here.
 
 	Author :
-		Andrei Datcu (datcuandrei) 23-August-2020 (last updated : 7-September-2020).
+		Andrei Datcu (datcuandrei) 23-August-2020 (last updated : 8-September-2020).
 */
 
 package andreid;
@@ -29,6 +29,7 @@ public class maclinuxutils {
     private JButton aboutButton;
     private JButton issuesButton;
     private JButton updatesButton;
+    private JButton attributionButton;
 
     public maclinuxutils() {
 
@@ -533,12 +534,30 @@ public class maclinuxutils {
                 }
             }
         });
+        attributionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFrame attribution = new JFrame("Attribution");
+                attribution.setVisible(true);
+                attribution.setSize(500,230);
+                attribution.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+                attribution.setLocationRelativeTo(null);
+                attribution.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+                JTextPane text = new JTextPane();
+                text.setContentType("text/html");
+                text.setText("<html><head></head><body><div align=\"center\"><h1>Attribution</h1><p>• MacLinuxUtils's UI would have not been possible without <b>FlatLaf</b> library.</p><p>• Special thanks to the macOS on Unsupported Macs community.</p><br/><p><b>FlatLaf</b> : https://www.formdev.com/flatlaf/</p></div></body></html>");
+                text.setEditable(false);
+
+                attribution.add(text);
+            }
+        });
     }
 
     // Main method
 
     public static void main(String args[]) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel( new FlatLightLaf() ); // for dark mode = FlatDarculaLaf ; for light mode = FlatLightLaf.
+        UIManager.setLookAndFeel( new FlatDarculaLaf() ); // for dark mode = FlatDarculaLaf ; for light mode = FlatLightLaf.
 
         // Checking if the computer is a Mac.
 
@@ -547,11 +566,27 @@ public class maclinuxutils {
         if (checkIfMac == false){
             JFrame noMac = new JFrame("Oops!");
             noMac.setVisible(true);
-            noMac.setSize(210,120);
+            noMac.setSize(265,120);
             noMac.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             noMac.setLocationRelativeTo(null);
             noMac.setLayout(new FlowLayout(FlowLayout.CENTER));
-            JLabel message = new JLabel("This program is for Intel-based Apple Macs only.");
+            JLabel message = null;
+
+            boolean checkIfWindows = new File("C:\\Windows").exists();
+
+            boolean checkIfOSX = new File("/System/Library").exists();
+
+            if(checkIfOSX == true){
+                message.setText("This program was created for Linux.");
+            }
+
+            if(checkIfWindows == true){
+                 message.setText("This program was created for Linux.");
+            }
+            else{
+                message.setText("This program is for Intel-based Apple Macs only.");
+            }
+
             JButton exit = new JButton("Exit");
 
             exit.addActionListener(actionEvent -> System.exit(0));
