@@ -8,7 +8,7 @@
 		This Java class is responsible for managing Intel Turbo Boost.
 
 	Author :
-		Andrei Datcu (datcuandrei) 27-September-2020 (last updated : 6-October-2020).
+		Andrei Datcu (datcuandrei) 27-September-2020 (last updated : 8-October-2020).
 */
 package andreid;
 
@@ -17,6 +17,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -28,100 +29,106 @@ public class turboboost {
     }
 
     public JFrame getFrame() {
-        try {
-            frame.setVisible(true);
-            frame.setSize(450,300);
-            frame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-            frame.setLocationRelativeTo(null);
-            FlowLayout layout = new FlowLayout(FlowLayout.CENTER);
-            layout.setHgap(100);
-            layout.setVgap(10);
-            frame.setLayout(layout);
-            JTextPane title = new JTextPane();
-            title.setContentType("text/html");
-            title.setText("<html><head></head><body><div align=\"center\"><h1>Turbo Boost Switcher</h1><h2>Reduce the load on your Mac by disabling Turbo Boost.</h2></div></body></html>");
-            title.setEditable(false);
-            frame.add(title);
+        boolean tbCompatible = new File("/sys/devices/system/cpu/intel_pstate/no_turbo").exists();
 
-            ButtonGroup radios = new ButtonGroup();
+        if (tbCompatible == false){
+            JOptionPane.showMessageDialog(null, "Your Mac doesn't support Turbo Boost switching on Linux.", "Oops!",JOptionPane.ERROR_MESSAGE);
+        }else {
+            try {
+                frame.setVisible(true);
+                frame.setSize(450, 300);
+                frame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                FlowLayout layout = new FlowLayout(FlowLayout.CENTER);
+                layout.setHgap(100);
+                layout.setVgap(10);
+                frame.setLayout(layout);
+                JTextPane title = new JTextPane();
+                title.setContentType("text/html");
+                title.setText("<html><head></head><body><div align=\"center\"><h1>Turbo Boost Switcher</h1><h2>Reduce the load on your Mac by disabling Turbo Boost.</h2></div></body></html>");
+                title.setEditable(false);
+                frame.add(title);
 
-            JRadioButton enableBoost = new JRadioButton("Enable Turbo Boost");
-            JRadioButton disableBoost = new JRadioButton("Disable Turbo Boost");
+                ButtonGroup radios = new ButtonGroup();
 
-            radios.add(enableBoost);
-            radios.add(disableBoost);
+                JRadioButton enableBoost = new JRadioButton("Enable Turbo Boost");
+                JRadioButton disableBoost = new JRadioButton("Disable Turbo Boost");
 
-            final String[] enableOrdisable = new String[1];
-            final BufferedReader[] readStatus = {new BufferedReader(new FileReader("/sys/devices/system/cpu/intel_pstate/no_turbo"))};
-            String finalStatus = readStatus[0].readLine();
+                radios.add(enableBoost);
+                radios.add(disableBoost);
 
-            switch (finalStatus){
-                case "0" :
-                    enableOrdisable[0] = "enabled";
-                    break;
-                case "1" :
-                    enableOrdisable[0] = "disabled";
-                    break;
-            }
+                final String[] enableOrdisable = new String[1];
+                final BufferedReader[] readStatus = {new BufferedReader(new FileReader("/sys/devices/system/cpu/intel_pstate/no_turbo"))};
+                String finalStatus = readStatus[0].readLine();
 
-            JLabel turboStatus = new JLabel("Turbo Boost is : " + enableOrdisable[0]);
-            enableBoost.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent) {
-                    try {
-                        String[] root = {"/bin/bash","-c","echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo"};
-                        Process p = Runtime.getRuntime().exec(root);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    turboStatus.setText("Turbo Boost is : " + enableOrdisable[0]);
-                    SwingUtilities.updateComponentTreeUI(frame);
-                    JOptionPane.showMessageDialog(null, "Turbo Boost is now enabled!", "Success!",JOptionPane.INFORMATION_MESSAGE);
+                switch (finalStatus) {
+                    case "0":
+                        enableOrdisable[0] = "enabled";
+                        break;
+                    case "1":
+                        enableOrdisable[0] = "disabled";
+                        break;
                 }
-            });
-            disableBoost.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent) {
-                    try {
-                        String[] root = {"/bin/bash","-c","echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo"};
-                        Process p = Runtime.getRuntime().exec(root);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    turboStatus.setText("Turbo Boost is : " + enableOrdisable[0]);
-                    SwingUtilities.updateComponentTreeUI(frame);
-                    JOptionPane.showMessageDialog(null, "Turbo Boost is now disabled!", "Success!",JOptionPane.INFORMATION_MESSAGE);
-                }
-            });
 
-            JButton refreshStatus = new JButton("Refresh status");
-            refreshStatus.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent) {
-                    try {
-                        readStatus[0] = new BufferedReader(new FileReader("/sys/devices/system/cpu/intel_pstate/no_turbo"));
-                        String reStatus = readStatus[0].readLine();
-                        switch (reStatus){
-                            case "0" :
-                                enableOrdisable[0] = "enabled";
-                                break;
-                            case "1" :
-                                enableOrdisable[0] = "disabled";
-                                break;
+                JLabel turboStatus = new JLabel("Turbo Boost is : " + enableOrdisable[0]);
+                enableBoost.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent actionEvent) {
+                        try {
+                            String[] root = {"/bin/bash", "-c", "echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo"};
+                            Process p = Runtime.getRuntime().exec(root);
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
                         turboStatus.setText("Turbo Boost is : " + enableOrdisable[0]);
                         SwingUtilities.updateComponentTreeUI(frame);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Turbo Boost is now enabled!", "Success!", JOptionPane.INFORMATION_MESSAGE);
                     }
-                }
-            });
-            frame.add(enableBoost);
-            frame.add(disableBoost);
-            frame.add(turboStatus);
-            frame.add(refreshStatus);
-        } catch (IOException e) {
-            e.printStackTrace();
+                });
+                disableBoost.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent actionEvent) {
+                        try {
+                            String[] root = {"/bin/bash", "-c", "echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo"};
+                            Process p = Runtime.getRuntime().exec(root);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        turboStatus.setText("Turbo Boost is : " + enableOrdisable[0]);
+                        SwingUtilities.updateComponentTreeUI(frame);
+                        JOptionPane.showMessageDialog(null, "Turbo Boost is now disabled!", "Success!", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                });
+
+                JButton refreshStatus = new JButton("Refresh status");
+                refreshStatus.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent actionEvent) {
+                        try {
+                            readStatus[0] = new BufferedReader(new FileReader("/sys/devices/system/cpu/intel_pstate/no_turbo"));
+                            String reStatus = readStatus[0].readLine();
+                            switch (reStatus) {
+                                case "0":
+                                    enableOrdisable[0] = "enabled";
+                                    break;
+                                case "1":
+                                    enableOrdisable[0] = "disabled";
+                                    break;
+                            }
+                            turboStatus.setText("Turbo Boost is : " + enableOrdisable[0]);
+                            SwingUtilities.updateComponentTreeUI(frame);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                frame.add(enableBoost);
+                frame.add(disableBoost);
+                frame.add(turboStatus);
+                frame.add(refreshStatus);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return frame;
     }
