@@ -60,4 +60,4 @@ If you find issues while running the app,please report them in the [issues](http
 
 ## Attribution : 
 - MacLinuxUtils's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/) library.
-- Special thanks to the macOS on Unsupported Macs community.
+- Special thanks to the [Unsupported Macs](https://discord.gg/XbbWAsE) community.
