@@ -9,7 +9,7 @@
 #		This script is responsible for launching MacLinuxUtils.
 #
 #	Author : 
-#		Andrei Datcu (datcuandrei) 27-August-2020 (last updated : 7-September-2020).
+#		Andrei Datcu (datcuandrei) 27-August-2020 (last updated : 11-October-2020).
 
 
 echo "##########################################################################"
@@ -23,9 +23,11 @@ echo "Running MacLinuxUtils..."
 echo "You may close the terminal window."
 
 if [ "$1" = "d" ]; then 
-    java -jar dark.jar
+    java -jar dark.jar &
+  exit 0
 else
-    java -jar light.jar    
+    java -jar light.jar  &
+  exit 0   
 fi
 
 HERE
