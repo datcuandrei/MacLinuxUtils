@@ -61,3 +61,7 @@ If you find issues while running the app,please report them in the [issues](http
 ## Attribution : 
 - MacLinuxUtils's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/) library.
 - Special thanks to the [Unsupported Macs](https://discord.gg/XbbWAsE) community.
+
+## Mentions of MacLinuxUtils : 
+- Wolfie's Tech Blog : [Running Debian on my Macbook](https://wolfiestech.blogspot.com/2020/10/running-debian-on-my-macbook.html)
+- Gitbook : [Fan Control for Macs running Linux](https://datcu-andrei-2.gitbook.io/maclinuxfancontrol/)
