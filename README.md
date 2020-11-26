@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/resources/fanico.png" width="24" height="24">&nbsp;MacLinuxUtils
+# <div align = center><img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/resources/banner.png" /></div>
 On macOS,there are tools for controlling the fan speeds,switching turbo boost on or off,etc.Sadly,Mac users on Linux have no alternatives for such tools.
 MacLinuxUtils's aim is to bring the functionality and ease of use of those tools on Linux distros,all in one package.
 
