@@ -1,14 +1,60 @@
 # <div align = center><img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/resources/ban.png" /></div>
-On macOS,there are tools for controlling the fan speeds,switching turbo boost on or off,etc.Sadly,Mac users on Linux have no alternatives for such tools.
-MacLinuxUtils's aim is to bring the functionality and ease of use of those tools on Linux distros,all in one package.
+MacLinuxUtils is the free and open-source alternative of macOS apps like Mac Fan Control,smcFanControl and Turbo Boost Switcher,but for Linux.MacLinuxUtils aim is to bring everything you love about macOS utilities for all Linux distros,in one package.
 
-## LICENSE
-This project is licensed under the GNU GPL v3 license. View LICENSE.md to learn more.
+# Features :
+### Graphical User Interface
+MacLinuxUtils is the only fan controller and turbo boost switcher for Macs running Linux that has a GUI.
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenu.png" width=70% height=70% />
 
-## Requirements:
+*also has dark mode*
+
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenudark.png" width=70% height=70% />
+
+### Fan Control
+Just like the name implies,you can can control your Mac's fans,monitor temperatures and fan speeds.
+
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/fancontrol.png" width=30% height=30% />
+
+The biggest highlight about the fan control is that it supports an unlimited number of fans,as long as the SMC recognizes them!
+Here is a screenshot of MacLinuxUtils operating 4 fans :
+
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/4fans.png" />
+
+### Controlling the fans
+Once you click the `Edit` button for a fan,you will be greeted with this menu :
+
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/fanmenuwithmanual.png" />
+
+You can set an automatic speed(which is set by the SMC itself),a constant speed with the help of the slider and manual mode(which is only working under experimental mode for the time being).
+
+### Manual mode (Experimental)
+Manual mode is a more advanced automatic mode.It let's you set fan speeds for certain temperatures.
+
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/manualmode.png" width=70% height=70%/>
+
+This feature is currently work-in-progress,so it was included with v2.3.0 under experimental mode for users to test.Any issues that the user finds it is recommended that it is reported in the Issues section.
+
+### Presets 
+Loving the current setup you have on MacLinuxUtils?Now you can save it and load it everytime you want,even at startup!
+Note : Under experimental mode,there are still issues when switching from a preset that has manual mode to a preset that has automatic/constant mode,hence why manual mode is not present in the stable build.
+
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/presets.png" />
+
+### Turbo Boost Switcher
+Intel Turbo Boost technology accelerates processor and graphics performance for peak loads, automatically allowing processor cores to run faster than the rated operating frequency if they’re operating below power, current, and temperature specification limits.When disabled,it keeps your Mac(assuming it supports Turbo Boost)cooler and saves battery.
+
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/turboboost.png" />
+
+### System tray icon
+Once you start MacLinuxUtils,you will see this icon <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/resources/fanico.png" width=5% height=5%/> in your taskbar or top bar(depending on your DE or WM).By right clicking on it,you interact with the program without using the main menu.
+
+### Experimental mode
+Experimental mode is a special mode created for users that want to test new features that are still work-in-progress.Please note that this is a standalone build;it doesn't depend in any way on the stable build.Keep reading for finding out how to launch MacLinuxUtils under experimental mode.
+
+# Requirements:
 - Latest Java version.
 
-## Download/How to use : 
+# Download : 
 - Installing the latest version of Java is as simple as opening the terminal and typing :
 
 ##### Debian,Ubuntu-based :
@@ -34,15 +80,24 @@ $ sudo dnf install java-11-openjdk.x86_64
 
 - After installing Java,download the latest version available in [releases](https://github.com/datcuandrei/MacLinuxUtils/releases).
 - Extract it where you want the application to be installed.
+
+# How to use :
 - To start the application,open terminal,``cd path/to/extracted/app``,and then run :
 ```bash
 $ sh maclinuxutils.sh
 ```
-It can also run under dark mode :
+To start the application under experimental mode,use the `exp` argument :
+```bash
+$ sh maclinuxutils.sh exp
+```
+To use dark mode,launch the app with the `d` argument as the last argument:
 ```bash
 $ sh maclinuxutils.sh d
 ```
-
+Same applies for experimental mode :
+```bash
+$ sh maclinuxutils.sh exp d
+```
 ## Permission denied : 
 This error occures when the user does not have enough privileges to access the program.
 In this case,we need to get ownership of the app by typing :
@@ -55,13 +110,17 @@ After that you can run the app using the commands provided above.
 Just like macOS alternatives,the application requires your password to execute operations.
 After typing your password in the terminal,the application will run under `super-user` mode(also known as `root`).The super-user mode allows it to modify the system files needed in order to do what it does.For more information of what it modifies,you can check the source code. 
 
-## Issues : 
+# Issues : 
 If you find issues while running the app,please report them in the [issues](https://github.com/datcuandrei/MacLinuxUtils/issues) section.
 
-## Attribution : 
+# LICENSE
+This project is licensed under the Apache 2.0 license. View LICENSE.md to learn more.
+
+# Attribution : 
 - MacLinuxUtils's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/) library.
+- Managing the files was done with the help of [Apache Commons IO](https://commons.apache.org/proper/commons-io/) 
 - Special thanks to the [Unsupported Macs](https://discord.gg/XbbWAsE) community.
 
-## Mentions of MacLinuxUtils : 
+# Mentions of MacLinuxUtils : 
 - Wolfie's Tech Blog : [Running Debian on my Macbook](https://wolfiestech.blogspot.com/2020/10/running-debian-on-my-macbook.html)
 - Gitbook : [Fan Control for Macs running Linux](https://datcu-andrei-2.gitbook.io/maclinuxfancontrol/)
