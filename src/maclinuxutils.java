@@ -155,7 +155,7 @@ public class maclinuxutils {
     // Main method
 
     public static void main(String args[]) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException, IOException {
-        UIManager.setLookAndFeel( new FlatLightLaf() ); // for dark mode = FlatDarculaLaf ; for light mode = FlatLightLaf.
+        UIManager.setLookAndFeel( new FlatDarculaLaf() ); // for dark mode = FlatDarculaLaf ; for light mode = FlatLightLaf.
         // Checking if the computer is a Mac.
 
         boolean checkIfMac = new File("/sys/devices/platform/applesmc.768").exists();

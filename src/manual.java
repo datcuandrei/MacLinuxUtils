@@ -140,7 +140,7 @@ public class manual{
         //executorService.shutdownNow();
         getTimer().cancel();
         getTimer().purge();
-        System.out.println("Manual service killed...");
+        //System.out.println("Manual service killed...");
     }
 
 }

@@ -41,6 +41,7 @@ public class startup {
                 try {
                     BufferedReader readFanMode = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/" + fanModes));
                     String fanMode = readFanMode.readLine();
+                    /* Experimental mode
                     manual manObj = new manual();
                     File manualFolder = new File("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4));
 
@@ -49,12 +50,12 @@ public class startup {
                     BufferedReader highTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/highTemp.txt"));
                     BufferedReader highRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/highRPM.txt"));
                     BufferedReader maxTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/maxTemp.txt"));
-                    BufferedReader maxRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/maxRPM.txt"));
+                    BufferedReader maxRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/maxRPM.txt"));*/
 
                     switch (fanMode) {
                         case ("automatic"):
-                            manObj.getTimer().cancel();
-                            manObj.getTimer().purge();
+                            //manObj.getTimer().cancel();
+                            //manObj.getTimer().purge();
                             try {
                                 if(checkFan == true) {
                                     String[] root = {"/bin/bash", "-c", "echo 0 > /sys/devices/platform/applesmc.768/" + fan.substring(0, 4) + "_manual"};
@@ -66,7 +67,8 @@ public class startup {
                             }
                             break;
                         case ("constant"):
-
+                            //manObj.getTimer().cancel();
+                            //manObj.getTimer().purge();
                             File[] getFans = locationOfPreset.listFiles(new FileFilter() {
                                 @Override
                                 public boolean accept(File pathname) {
