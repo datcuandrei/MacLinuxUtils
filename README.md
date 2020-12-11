@@ -53,7 +53,7 @@ Manual mode is a more advanced automatic mode.It let's you set fan speeds for ce
 
 <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/manualmode.png" width=70% height=70%/>
 
-This feature is currently work-in-progress,so it was included with v2.3.0 under experimental mode for users to test.Any issues that the user finds it is recommended that it is reported in the Issues section.Thank you, @mariobrostech for suggesting the experimental setting.
+This feature is currently work-in-progress,so it was included with v2.3.0 under experimental mode for users to test.Any issues that the user finds it is recommended that it is reported in the Issues section.
 
 ### Presets 
 Loving the current setup you have on MacLinuxUtils?Now you can save it and load it everytime you want,even at startup!
@@ -70,7 +70,7 @@ Intel Turbo Boost technology accelerates processor and graphics performance for 
 Once you start MacLinuxUtils,you will see this icon <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/resources/fanico.png" width=5% height=5%/> in your taskbar or top bar(depending on your DE or WM).By right clicking on it,you interact with the program without using the main menu.
 
 ### Experimental mode
-Experimental mode is a special mode created for users that want to test new features that are still work-in-progress.Please note that this is a standalone build;it doesn't depend in any way on the stable build.Keep reading for finding out how to launch MacLinuxUtils under experimental mode.
+Experimental mode is a special mode created for users that want to test new features that are still work-in-progress.Please note that this is a standalone build;it doesn't depend in any way on the stable build.Keep reading for finding out how to launch MacLinuxUtils under experimental mode.Thank you, @mariobrostech for suggesting the experimental setting.
 
 # Requirements
 - Latest Java version.
