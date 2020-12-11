@@ -53,7 +53,7 @@ Manual mode is a more advanced automatic mode.It let's you set fan speeds for ce
 
 <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/manualmode.png" width=70% height=70%/>
 
-This feature is currently work-in-progress,so it was included with v2.3.0 under experimental mode for users to test.Any issues that the user finds it is recommended that it is reported in the Issues section.
+This feature is currently work-in-progress,so it was included with v2.3.0 under experimental mode for users to test.Any issues that the user finds it is recommended that it is reported in the Issues section.Thank you, @mario_bros_tech for suggesting the experimental setting.
 
 ### Presets 
 Loving the current setup you have on MacLinuxUtils?Now you can save it and load it everytime you want,even at startup!
