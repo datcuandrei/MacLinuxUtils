@@ -1,15 +1,18 @@
 /*
-    MacLinuxUtils
+    Copyright 2020 Andrei Datcu.
 
-	Module name :
-		turboboost.java
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-	Abstract :
-		This Java class is responsible for managing Intel Turbo Boost.
+        http://www.apache.org/licenses/LICENSE-2.0
 
-	Author :
-		Andrei Datcu (datcuandrei) 27-September-2020 (last updated : 8-October-2020).
-*/
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ */
 package andreid;
 
 import javax.swing.*;
