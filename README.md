@@ -32,7 +32,7 @@ MacLinuxUtils is the only fan controller and turbo boost switcher for Macs runni
 <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenudark.png" width=70% height=70% />
 
 ### Fan Control
-Just like the name implies,you can can control your Mac's fans,monitor temperatures and fan speeds.
+Just like the name implies,you can can control your Mac's fans,monitor temperatures(2 CPUs,GPU,RAM,Battery,4 HDD Bays and Optical Drive.Please note that applesmc.768 on Linux might not identify all of these sensors,even if your Mac has them,it depends on your machine!) and fan speeds.
 
 <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/fancontrol.png" width=30% height=30% />
 
