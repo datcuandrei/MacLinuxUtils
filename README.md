@@ -1,6 +1,27 @@
 # <div align = center><img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/resources/ban.png" /></div>
 MacLinuxUtils is the free and open-source alternative of macOS apps like Mac Fan Control,smcFanControl and Turbo Boost Switcher,but for Linux.MacLinuxUtils aim is to bring everything you love about macOS utilities for all Linux distros,in one package.
 
+Table of Contents
+=================
+
+  * [Features](#features)
+    * [Graphical User Interface](#graphical-user-interface)
+    * [Fan Control](#fan-control)
+    * [Controlling the fans](#controlling-the-fans)
+    * [Manual Mode (Experimental)](#manual-mode-experimental)
+    * [Presets](#presets)
+    * [Turbo Boost Switcher](#turbo-boost-switcher)
+    * [System tray icon](#system-tray-icon)
+    * [Experimental mode](#experimental-mode)
+  * [Requirements](#requirements)
+  * [Download](#download)
+  * [How to use](#how-to-use)
+    * [Permission denied](#permission-denied)
+    * [Why is it asking for my password?](#why-is-it-asking-for-my-password)
+  * [Issues](#issues)
+  * [LICENSE](#license)
+  * [Mentions of MacLinuxUtils](#mentions-of-maclinuxutils)
+
 # Features :
 ### Graphical User Interface
 MacLinuxUtils is the only fan controller and turbo boost switcher for Macs running Linux that has a GUI.
