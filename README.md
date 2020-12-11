@@ -17,12 +17,12 @@ Table of Contents
   * [Download](#download)
   * [How to use](#how-to-use)
     * [Permission denied](#permission-denied)
-    * [Why is it asking for my password?](#why-is-it-asking-for-my-password)
+    * [Why is it asking for my password?](#why-is-it-asking-for-my-password-)
   * [Issues](#issues)
   * [LICENSE](#license)
   * [Mentions of MacLinuxUtils](#mentions-of-maclinuxutils)
 
-# Features :
+# Features
 ### Graphical User Interface
 MacLinuxUtils is the only fan controller and turbo boost switcher for Macs running Linux that has a GUI.
 <img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenu.png" width=70% height=70% />
@@ -72,10 +72,10 @@ Once you start MacLinuxUtils,you will see this icon <img src="https://raw.github
 ### Experimental mode
 Experimental mode is a special mode created for users that want to test new features that are still work-in-progress.Please note that this is a standalone build;it doesn't depend in any way on the stable build.Keep reading for finding out how to launch MacLinuxUtils under experimental mode.
 
-# Requirements:
+# Requirements
 - Latest Java version.
 
-# Download : 
+# Download 
 - Installing the latest version of Java is as simple as opening the terminal and typing :
 
 ##### Debian,Ubuntu-based :
@@ -102,7 +102,7 @@ $ sudo dnf install java-11-openjdk.x86_64
 - After installing Java,download the latest version available in [releases](https://github.com/datcuandrei/MacLinuxUtils/releases).
 - Extract it where you want the application to be installed.
 
-# How to use :
+# How to use
 - To start the application,open terminal,``cd path/to/extracted/app``,and then run :
 ```bash
 $ sh maclinuxutils.sh
@@ -119,7 +119,7 @@ Same applies for experimental mode :
 ```bash
 $ sh maclinuxutils.sh exp d
 ```
-## Permission denied : 
+## Permission denied
 This error occures when the user does not have enough privileges to access the program.
 In this case,we need to get ownership of the app by typing :
 ```bash
@@ -131,17 +131,17 @@ After that you can run the app using the commands provided above.
 Just like macOS alternatives,the application requires your password to execute operations.
 After typing your password in the terminal,the application will run under `super-user` mode(also known as `root`).The super-user mode allows it to modify the system files needed in order to do what it does.For more information of what it modifies,you can check the source code. 
 
-# Issues : 
+# Issues
 If you find issues while running the app,please report them in the [issues](https://github.com/datcuandrei/MacLinuxUtils/issues) section.
 
 # LICENSE
 This project is licensed under the Apache 2.0 license. View LICENSE.md to learn more.
 
-# Attribution : 
+# Attribution
 - MacLinuxUtils's UI would have not been possible without [FlatLaf](https://www.formdev.com/flatlaf/) library.
 - Managing the files was done with the help of [Apache Commons IO](https://commons.apache.org/proper/commons-io/) 
 - Special thanks to the [Unsupported Macs](https://discord.gg/XbbWAsE) community.
 
-# Mentions of MacLinuxUtils : 
+# Mentions of MacLinuxUtils
 - Wolfie's Tech Blog : [Running Debian on my Macbook](https://wolfiestech.blogspot.com/2020/10/running-debian-on-my-macbook.html)
 - Gitbook : [Fan Control for Macs running Linux](https://datcu-andrei-2.gitbook.io/maclinuxfancontrol/)
