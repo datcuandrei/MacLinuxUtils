@@ -202,6 +202,29 @@ public class maclinuxutils {
             if (!checkPresets){
                 presets.mkdirs();
             }
+
+            // Experimental mode
+            //JOptionPane.showMessageDialog(null, "<html><head></head><body><div align=\"center\"><h1>Welcome to experimental mode!</h1><h2>What is experimental mode?</h2><h3><br/>Experimental mode is a special mode created for users that want to test new features<br>that are still work-in-progress.Please note that this is a standalone build;it doesn't depend in<br>any way on the stable build(which was done in November).</h3><br/><h2>v2.3.0 Experimental Mode Changelog : </h2><h3>- Manual Mode</h3><br/><h2>Any issues you find,it is recommended that you report them by using the Issues button in the main menu.<br>Contribution to the code is always welcomed.<br>Thank you for testing MacLinuxUtils new features!</h2></div></body></html>", "Experimental mode",JOptionPane.PLAIN_MESSAGE);
+
+            // Frame
+            JFrame frame = new JFrame("MacLinuxUtils");
+            frame.setContentPane(new maclinuxutils().panel1);
+            frame.setVisible(true);
+            frame.setSize(600, 300);
+            frame.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    if (JOptionPane.showConfirmDialog(null, "Do you want to exit MacLinuxUtils or leave it running in the background?", "Exit",
+                            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                        System.exit(0);
+                    } else {
+                        JOptionPane.showMessageDialog(null,"MacLinuxUtils will keep running in the background.You can access it at any time through the system tray.");
+                        frame.dispose();
+                    }
+                }
+            });
+            frame.setLocationRelativeTo(null);
+
             // System tray
             boolean checkIco = new File("/opt/maclinuxutls/fanico.png").exists();
             if(checkIco == false){
@@ -227,28 +250,6 @@ public class maclinuxutils {
                 System.out.println("Selected startup preset doesn't exist...\nWill load the default one.");
                 first.load("system");
             }
-
-            // Experimental mode
-            //JOptionPane.showMessageDialog(null, "<html><head></head><body><div align=\"center\"><h1>Welcome to experimental mode!</h1><h2>What is experimental mode?</h2><h3><br/>Experimental mode is a special mode created for users that want to test new features<br>that are still work-in-progress.Please note that this is a standalone build;it doesn't depend in<br>any way on the stable build(which was done in November).</h3><br/><h2>v2.3.0 Experimental Mode Changelog : </h2><h3>- Manual Mode</h3><br/><h2>Any issues you find,it is recommended that you report them by using the Issues button in the main menu.<br>Contribution to the code is always welcomed.<br>Thank you for testing MacLinuxUtils new features!</h2></div></body></html>", "Experimental mode",JOptionPane.PLAIN_MESSAGE);
-
-            // Frame
-            JFrame frame = new JFrame("MacLinuxUtils");
-            frame.setContentPane(new maclinuxutils().panel1);
-            frame.setVisible(true);
-            frame.setSize(600, 300);
-            frame.addWindowListener(new WindowAdapter() {
-                @Override
-                public void windowClosing(WindowEvent e) {
-                    if (JOptionPane.showConfirmDialog(null, "Do you want to exit MacLinuxUtils or leave it running in the background?", "Exit",
-                            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                        System.exit(0);
-                    } else {
-                        JOptionPane.showMessageDialog(null,"MacLinuxUtils will keep running in the background.You can access it at any time through the system tray.");
-                        frame.dispose();
-                    }
-                }
-            });
-            frame.setLocationRelativeTo(null);
         }
     }
 }

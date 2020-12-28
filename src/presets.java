@@ -139,11 +139,13 @@ public class presets {
             manw.write(man.readLine());
             manw.close();
         }
-        BufferedReader readTurbo = new BufferedReader(new FileReader("/sys/devices/system/cpu/intel_pstate/no_turbo"));
-        FileWriter systurbo = new FileWriter(new File("/opt/maclinuxutils/presets/system/no_turbo"));
-        systurbo.write(readTurbo.readLine());
-        systurbo.close();
-
+        boolean checkTurbo = new File("/sys/devices/system/cpu/intel_pstate/no_turbo").exists();
+        if (checkTurbo == true){
+            BufferedReader readTurbo = new BufferedReader(new FileReader("/sys/devices/system/cpu/intel_pstate/no_turbo"));
+            FileWriter systurbo = new FileWriter(new File("/opt/maclinuxutils/presets/system/no_turbo"));
+            systurbo.write(readTurbo.readLine());
+            systurbo.close();
+        }
     }
 
     public JComboBox getPresetList() {
