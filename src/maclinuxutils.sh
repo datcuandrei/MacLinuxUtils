@@ -17,7 +17,7 @@ clear
 echo "MacLinuxUtils will now ask you for your password.
 This is required for the program in order to run properly.If you have already entered it,the program will run without prompting it again."
 
-VERSIONTAG=v2.3.0
+VERSIONTAG=v2.3.1
 VER="MacLinuxUtils $VERSIONTAG"
 
 sudo su <<HERE

@@ -41,16 +41,25 @@ public class startup {
                 try {
                     BufferedReader readFanMode = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/" + fanModes));
                     String fanMode = readFanMode.readLine();
-                    /* Experimental mode
-                    manual manObj = new manual();
+                    //Experimental mode
+                    /*manual manObj = new manual();
                     File manualFolder = new File("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4));
 
-                    BufferedReader lowTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/lowTemp.txt"));
-                    BufferedReader lowRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/lowRPM.txt"));
-                    BufferedReader highTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/highTemp.txt"));
-                    BufferedReader highRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/highRPM.txt"));
-                    BufferedReader maxTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/maxTemp.txt"));
-                    BufferedReader maxRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/maxRPM.txt"));*/
+                    BufferedReader lowTemp = null;
+                    BufferedReader lowRPM = null;
+                    BufferedReader highTemp = null;
+                    BufferedReader highRPM = null;
+                    BufferedReader maxTemp = null;
+                    BufferedReader maxRPM = null;
+
+                    if (manualFolder.exists() == true){
+                        lowTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/lowTemp.txt"));
+                        lowRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/lowRPM.txt"));
+                        highTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/highTemp.txt"));
+                        highRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/highRPM.txt"));
+                        maxTemp = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/maxTemp.txt"));
+                        maxRPM = new BufferedReader(new FileReader("/opt/maclinuxutils/presets/" + selectedPreset + "/manual/" + fan.substring(0, 4) + "/maxRPM.txt"));
+                    }*/
 
                     switch (fanMode) {
                         case ("automatic"):
