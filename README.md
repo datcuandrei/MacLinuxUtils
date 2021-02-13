@@ -15,7 +15,8 @@ Table of Contents
     * [Experimental mode](#experimental-mode)
   * [Requirements](#requirements)
   * [Download](#download)
-  * [How to use](#how-to-use)
+* [How to install](#how-to-install)
+    * [Portable use](#portable-use)
     * [Permission denied](#permission-denied)
     * [Why is it asking for my password?](#why-is-it-asking-for-my-password-)
   * [Issues](#issues)
@@ -25,11 +26,11 @@ Table of Contents
 # Features
 ### Graphical User Interface
 MacLinuxUtils is the only fan controller and turbo boost switcher for Macs running Linux that has a GUI.
-<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenu.png" width=70% height=70% />
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenunew.png" width=50% height=70% />
 
 *also has dark mode*
 
-<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenudark.png" width=70% height=70% />
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenudarknew.png" width=70% height=50% />
 
 ### Fan Control
 Just like the name implies,you can can control your Mac's fans,monitor temperatures(2 CPUs,GPU,RAM,Battery,4 HDD Bays and Optical Drive.Please note that applesmc.768 on Linux might not identify all of these sensors,even if your Mac has them,it depends on your machine!) and fan speeds.
@@ -104,28 +105,52 @@ $ sudo dnf install java-11-openjdk.x86_64
 - After installing Java,download the latest version available in [releases](https://github.com/datcuandrei/MacLinuxUtils/releases).
 - Extract it where you want the application to be installed.
 
-# How to use
-- To start the application,open terminal,``cd path/to/extracted/app``,and then run :
+# How to install
+- To install the application,open terminal,``cd path/to/extracted/app``,and then run :
 ```bash
-$ sh maclinuxutils.sh
+$ sudo sh installmlu
 ```
-To start the application under experimental mode,use the `exp` argument :
+
+After the installation is done,simply run `maclinuxutils`,or search for it using an application finder.
+If the app doesn't launch,use `sudo java -jar /opt/mlu.jar` in the terminal instead.
+
+- To uninstall the application,open terminal,``cd path/to/extracted/app``,and then run :
 ```bash
-$ sh maclinuxutils.sh exp
+$ sudo sh uninstallmlu
 ```
-To use dark mode,launch the app with the `d` argument as the last argument:
+
+## Portable use
+To use MacLinuxUtils without installing it,after extracting it,open terminal and
 ```bash
-$ sh maclinuxutils.sh d
+$ cd path/to/extracted/app
+$ sudo java -jar mlu.jar
 ```
-Same applies for experimental mode :
+or 
+
 ```bash
-$ sh maclinuxutils.sh exp d
+$ cd path/to/extracted/app
+$ sudo java -jar mluexp.jar
 ```
+for experimental mode.
+
+To start the application under experimental mode,use the `-e` argument :
+```bash
+$ maclinuxutils -e
+```
+
 ## Permission denied
 This error occures when the user does not have enough privileges to access the program.
 In this case,we need to get ownership of the app by typing :
 ```bash
-$ chmod +x maclinuxutils.sh
+$ chmod +x /bin/maclinuxutils
+$ chmod +x /opt/mlu.jar
+$ chmod +x /opt/mluexp.jar
+```
+or if you run BackToMac as portable :
+```bash
+$ cd path/to/extracted/app
+$ chmod +x mlu.jar
+$ chmod +x mluexp.jar
 ```
 After that you can run the app using the commands provided above.
 
