@@ -15,7 +15,7 @@ Table of Contents
     * [Experimental mode](#experimental-mode)
   * [Requirements](#requirements)
   * [Download](#download)
-* [How to install](#how-to-install)
+  * [How to install](#how-to-install)
     * [Portable use](#portable-use)
     * [Permission denied](#permission-denied)
     * [Why is it asking for my password?](#why-is-it-asking-for-my-password-)
@@ -26,11 +26,11 @@ Table of Contents
 # Features
 ### Graphical User Interface
 MacLinuxUtils is the only fan controller and turbo boost switcher for Macs running Linux that has a GUI.
-<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenunew.png" width=50% height=70% />
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenunew.png" width=50% height=50% />
 
 *also has dark mode*
 
-<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenudarknew.png" width=70% height=50% />
+<img src="https://raw.githubusercontent.com/datcuandrei/MacLinuxUtils/master/captures/mainmenudarknew.png" width=50% height=50% />
 
 ### Fan Control
 Just like the name implies,you can can control your Mac's fans,monitor temperatures(2 CPUs,GPU,RAM,Battery,4 HDD Bays and Optical Drive.Please note that applesmc.768 on Linux might not identify all of these sensors,even if your Mac has them,it depends on your machine!) and fan speeds.
