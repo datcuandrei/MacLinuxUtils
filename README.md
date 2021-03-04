@@ -146,7 +146,7 @@ $ chmod +x /bin/maclinuxutils
 $ chmod +x /opt/mlu.jar
 $ chmod +x /opt/mluexp.jar
 ```
-or if you run BackToMac as portable :
+or if you run MacLinuxUtils as portable :
 ```bash
 $ cd path/to/extracted/app
 $ chmod +x mlu.jar
